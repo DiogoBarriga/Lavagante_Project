@@ -1,4 +1,4 @@
-# Lavagante Project Management
+# # Lavagante Quantum Research Trading Tool
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
@@ -55,8 +55,6 @@ This project is licensed under the Creative Commons Attribution-NonCommercial 4.
 ## Contact
 
 For any inquiries or feedback, please reach out to the project maintainers via the communication scripts or through the GitHub issues page.
-
-# Lavagante Quantum Trading Tool
 
 ## **What It Is**
 
