@@ -4,6 +4,9 @@
 [![Research Status](https://img.shields.io/badge/Research-Complete-brightgreen.svg)]()
 [![Documentation](https://img.shields.io/badge/Documentation-100%25-blue.svg)]()
 [![Quality Gates](https://img.shields.io/badge/Quality%20Gates-5/5%20Pass-success.svg)]()
+[![Beta Release](https://img.shields.io/badge/Release-Beta%20v0.9.0-orange.svg)]()
+[![Seeking Feedback](https://img.shields.io/badge/Status-Seeking%20Feedback-yellow.svg)]()
+[![Academic Collaboration](https://img.shields.io/badge/Academic-Collaboration%20Welcome-blue.svg)]()
 
 ## 🎯 **Research Overview**
 
