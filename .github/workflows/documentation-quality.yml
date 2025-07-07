@@ -1,0 +1,105 @@
+name: Documentation Quality Gates
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  documentation-quality:
+    runs-on: ubuntu-latest
+    name: Documentation Quality Assurance
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        npm install -g markdownlint-cli
+        npm install -g markdown-link-check
+        
+    - name: Lint Markdown files
+      run: |
+        markdownlint '**/*.md' --ignore node_modules --ignore .github --config .markdownlint.json || true
+        
+    - name: Check markdown links
+      run: |
+        find . -name "*.md" -not -path "./node_modules/*" -not -path "./.github/*" | xargs markdown-link-check --config .markdown-link-check.json || true
+        
+    - name: Validate README structure
+      run: |
+        if [[ -f "README.md" ]]; then
+          echo "✅ README.md exists"
+          if grep -q "# Lavagante Project Management" README.md; then
+            echo "✅ Project title found"
+          else
+            echo "❌ Project title missing"
+            exit 1
+          fi
+          if grep -q "## " README.md; then
+            echo "✅ Section headers found"
+          else
+            echo "❌ Section headers missing"
+            exit 1
+          fi
+        else
+          echo "❌ README.md not found"
+          exit 1
+        fi
+        
+    - name: Check required files
+      run: |
+        echo "Checking for required project files..."
+        files=("LICENSE" "CONTRIBUTING.md" "CODE_OF_CONDUCT.md" "CHANGELOG.md")
+        for file in "${files[@]}"; do
+          if [[ -f "$file" ]]; then
+            echo "✅ $file exists"
+          else
+            echo "❌ $file missing"
+            exit 1
+          fi
+        done
+        
+    - name: Validate documentation structure
+      run: |
+        echo "Checking documentation structure..."
+        if [[ -d "docs" ]]; then
+          echo "✅ docs/ directory exists"
+          if [[ -d "docs/roadmaps" ]]; then
+            echo "✅ docs/roadmaps/ directory exists"
+          else
+            echo "❌ docs/roadmaps/ missing"
+            exit 1
+          fi
+        else
+          echo "❌ docs/ directory missing"
+          exit 1
+        fi
+
+  project-structure:
+    runs-on: ubuntu-latest
+    name: Project Structure Validation
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Validate directory structure
+      run: |
+        echo "Validating project structure..."
+        required_dirs=("docs" "project-artifacts" "scripts" "src" "tests")
+        for dir in "${required_dirs[@]}"; do
+          if [[ -d "$dir" ]]; then
+            echo "✅ $dir/ directory exists"
+          else
+            echo "❌ $dir/ directory missing"
+            exit 1
+          fi
+        done

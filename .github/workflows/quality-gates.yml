@@ -1,0 +1,49 @@
+name: Quality Gates
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run linters
+        run: |
+          flake8 src/
+          pylint src/
+
+      - name: Run tests
+        run: |
+          pytest tests/unit
+          pytest tests/integration
+
+      - name: Check code coverage
+        run: |
+          coverage run -m pytest
+          coverage report
+          coverage html
+
+      - name: Quality gate check
+        run: |
+          if [ $(coverage report | tail -n 1 | awk '{print $4}' | sed 's/%//') -lt 80 ]; then
+            echo "Code coverage is below 80%."
+            exit 1
+          fi
+
+      - name: Success message
+        run: echo "Quality gates passed!"

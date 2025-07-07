@@ -1,0 +1,67 @@
+{
+  "projectName": "Lavagante Project Management",
+  "version": "1.0.0",
+  "description": "Project management settings for the Lavagante project, including planning, tracking, risk management, and stakeholder communication.",
+  "defaultBranch": "main",
+  "kanbanBoard": {
+    "enabled": true,
+    "columns": [
+      {
+        "name": "To Do",
+        "limit": 10
+      },
+      {
+        "name": "In Progress",
+        "limit": 5
+      },
+      {
+        "name": "Done",
+        "limit": 10
+      }
+    ]
+  },
+  "riskManagement": {
+    "enabled": true,
+    "riskThreshold": "medium",
+    "reportFrequency": "monthly"
+  },
+  "stakeholderCommunication": {
+    "enabled": true,
+    "communicationPlan": "weekly",
+    "reportTemplates": [
+      "weekly-status.md",
+      "milestone-reports.md",
+      "executive-summary.md"
+    ]
+  },
+  "agileImplementation": {
+    "methodology": "Scrum",
+    "sprintDuration": "2 weeks",
+    "retrospectiveFrequency": "end of each sprint"
+  },
+  "qualityGates": {
+    "enabled": true,
+    "criteria": [
+      "codeCoverage >= 80%",
+      "noCriticalIssues",
+      "peerReviewCompleted"
+    ]
+  },
+  "releaseManagement": {
+    "enabled": true,
+    "releaseFrequency": "bi-weekly",
+    "versioningScheme": "semantic"
+  },
+  "projectMetrics": {
+    "enabled": true,
+    "dashboard": "metrics-dashboard.yml",
+    "reporting": {
+      "frequency": "sprint-end",
+      "metrics": [
+        "velocity",
+        "burndown",
+        "qualityMetrics"
+      ]
+    }
+  }
+}

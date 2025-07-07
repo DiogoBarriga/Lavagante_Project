@@ -1,0 +1,61 @@
+{
+  "team": {
+    "members": [
+      {
+        "name": "Alice Johnson",
+        "role": "Project Manager",
+        "email": "alice.johnson@example.com",
+        "responsibilities": [
+          "Oversee project execution",
+          "Manage stakeholder communication",
+          "Ensure project milestones are met"
+        ]
+      },
+      {
+        "name": "Bob Smith",
+        "role": "Lead Developer",
+        "email": "bob.smith@example.com",
+        "responsibilities": [
+          "Lead development team",
+          "Ensure code quality",
+          "Conduct code reviews"
+        ]
+      },
+      {
+        "name": "Charlie Brown",
+        "role": "QA Engineer",
+        "email": "charlie.brown@example.com",
+        "responsibilities": [
+          "Develop test plans",
+          "Execute testing procedures",
+          "Report bugs and issues"
+        ]
+      },
+      {
+        "name": "Diana Prince",
+        "role": "UX/UI Designer",
+        "email": "diana.prince@example.com",
+        "responsibilities": [
+          "Design user interfaces",
+          "Conduct user research",
+          "Collaborate with developers on implementation"
+        ]
+      }
+    ],
+    "communication": {
+      "tools": [
+        "Slack",
+        "Email",
+        "Zoom"
+      ],
+      "meeting_frequency": "Weekly",
+      "status_updates": "Bi-weekly"
+    },
+    "roles": {
+      "project_manager": "Responsible for overall project success",
+      "lead_developer": "Oversees technical implementation",
+      "qa_engineer": "Ensures product quality",
+      "ux_ui_designer": "Focuses on user experience and design"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "lavagante-project-management",
+  "version": "1.0.0",
+  "description": "Project management tools and resources for the Lavagante project.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest",
+    "build": "webpack --mode production",
+    "lint": "eslint .",
+    "deploy": "bash scripts/deploy-dashboard.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/lavagante-project-management.git"
+  },
+  "keywords": [
+    "project-management",
+    "agile",
+    "scrum",
+    "metrics",
+    "reporting"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.21.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "^26.6.0",
+    "eslint": "^7.14.0",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

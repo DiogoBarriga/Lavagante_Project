@@ -1,0 +1,45 @@
+name: Metrics Dashboard
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight
+  workflow_dispatch:
+
+jobs:
+  collect-metrics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Collect metrics
+        run: |
+          python src/dashboard/metrics-collector.py
+
+      - name: Generate report
+        run: |
+          python src/dashboard/report-generator.py
+
+      - name: Visualize metrics
+        run: |
+          python src/dashboard/visualization.py
+
+      - name: Commit and push metrics report
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add reports/automated/metrics-report.md
+          git commit -m "Update metrics report"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,8 @@
+Potential duplicate or outdated files:
+- c:\Users\diogo\Desktop\pythpn\Projecto final\quant-analysis-app\src\quantum_portfolio_consciousness_fixed.py
+- c:\Users\diogo\Desktop\pythpn\Projecto final\quant-analysis-app\src\quantum_portfolio_consciousness_backup.py
+
+These files should be reviewed against:
+- c:\Users\diogo\Desktop\pythpn\Projecto final\quant-analysis-app\src\quantum_portfolio_consciousness.py
+
+Consider deleting or archiving them if they are no longer needed.

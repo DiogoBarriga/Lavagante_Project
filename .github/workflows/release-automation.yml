@@ -1,0 +1,48 @@
+name: Release Automation
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Trigger on version tags
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          pytest tests/unit
+
+      - name: Build Docker image
+        run: |
+          docker build -t lavagante-project .
+
+      - name: Push Docker image
+        run: |
+          docker tag lavagante-project mydockerhubusername/lavagante-project:${{ github.ref }}
+          docker push mydockerhubusername/lavagante-project:${{ github.ref }}
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this release:
+            - Automated release triggered by tag push.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
