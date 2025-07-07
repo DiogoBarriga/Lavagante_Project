@@ -179,7 +179,7 @@ git config --global init.defaultBranch main
 git init
 
 # Add remote origin (replace YOUR-USERNAME with your GitHub username)
-git remote add origin https://github.com/YOUR-USERNAME/lavagante-project-management.git
+git remote add origin https://github.com/DiogoBarriga/Lavagante_Project.git
 
 # Stage all professional files
 git add .
@@ -225,7 +225,7 @@ git push -u origin main
 2. **GitHub Pages Setup:**
    - Go to Settings → Pages
    - Source: Deploy from branch `main` / `root`
-   - ✅ Your portfolio will be live at: `https://YOUR-USERNAME.github.io/lavagante-project-management`
+   - ✅ Your portfolio will be live at: `https://DiogoBarriga.github.io/Lavagante_Project`
 
 3. **Professional Release Creation:**
 ```powershell
@@ -318,7 +318,7 @@ This framework is immediately applicable for:
 **Repository About Section Enhancement:**
 1. Click the ⚙️ gear icon next to "About" on your repository main page
 2. **Description**: `Enterprise-grade Project Management Framework showcasing comprehensive PM competencies, strategic planning, and quality excellence. Portfolio demonstration for senior PM role applications.`
-3. **Website**: `https://YOUR-USERNAME.github.io/lavagante-project-management`
+3. **Website**: `https://DiogoBarriga.github.io/Lavagante_Project`
 4. **Topics**: `project-management`, `portfolio`, `career-showcase`, `pm-competencies`, `strategic-planning`, `quality-assurance`, `agile-methodology`, `enterprise-solutions`
 5. ✅ **Include in home page**
 
@@ -342,7 +342,7 @@ Your README.md is already optimized, but ensure these career-focused elements ar
 Enterprise-level PM professional with systematic approach to strategic planning, quality assurance, and team leadership.
 
 ### 🚀 Featured Portfolio Project
-**[Lavagante PM Framework](https://github.com/YOUR-USERNAME/lavagante-project-management)** - Comprehensive demonstration of PM competencies
+**[Lavagante PM Framework](https://github.com/DiogoBarriga/Lavagante_Project)** - Comprehensive demonstration of PM competencies
 - 100% documentation coverage with professional standards
 - 5/5 automated quality gates passing  
 - A+ grade organization showcasing systematic excellence
@@ -359,7 +359,7 @@ Enterprise-level PM professional with systematic approach to strategic planning,
 ### 📫 Professional Contact
 - LinkedIn: [Your LinkedIn Profile]
 - Email: your.professional.email@domain.com
-- Portfolio: [Lavagante PM Framework](https://github.com/YOUR-USERNAME/lavagante-project-management)
+- Portfolio: [Lavagante PM Framework](https://github.com/DiogoBarriga/Lavagante_Project)
 
 ---
 *Systematic project management excellence through comprehensive planning, quality execution, and strategic delivery.*
