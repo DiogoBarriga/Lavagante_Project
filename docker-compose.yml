@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: lavagante_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  metrics:
+    build:
+      context: ./src/dashboard
+      dockerfile: Dockerfile
+    environment:
+      - METRICS_DB_URL=postgres://user:password@db/lavagante_db
+    depends_on:
+      - db
+
+volumes:
+  db_data: {}

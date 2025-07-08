@@ -1,0 +1,112 @@
+================================================================================
+                         QUANTPRO AI TRADING SYSTEM
+                            QUICK START GUIDE
+================================================================================
+
+🚀 FASTEST WAY TO GET STARTED:
+===============================
+
+1. DOWNLOAD & EXTRACT
+   - Extract files to C:\QuantPro (or any folder without spaces)
+
+2. RUN SETUP
+   - Open Command Prompt in the QuantPro folder
+   - Type: python setup.py
+   - Press Enter and follow the wizard
+
+3. LAUNCH APPLICATION
+   - Double-click: start_quantpro_enhanced.bat
+   - Or run: python launch.py
+
+4. OPEN IN BROWSER
+   - Go to: http://localhost:8501
+   - The browser should open automatically
+
+That's it! The application should now be running.
+
+================================================================================
+
+🔧 REQUIREMENTS CHECK:
+======================
+
+BEFORE YOU START, MAKE SURE YOU HAVE:
+- Windows 10/11, macOS 10.15+, or Ubuntu 18.04+
+- Python 3.8 or higher (download from python.org)
+- At least 4GB RAM and 2GB free disk space
+- Internet connection for downloading packages
+
+================================================================================
+
+⚡ ALTERNATIVE QUICK METHODS:
+=============================
+
+METHOD 1 - Automatic Setup:
+   python setup.py --auto
+
+METHOD 2 - One Command:
+   pip install -r requirements.txt && streamlit run LVG_Trading_UI.py
+
+METHOD 3 - Manual Steps:
+   python -m venv venv
+   venv\Scripts\activate  (Windows) or source venv/bin/activate (Unix)
+   pip install -r requirements.txt
+   streamlit run LVG_Trading_UI.py
+
+================================================================================
+
+🛠️ TROUBLESHOOTING:
+===================
+
+PROBLEM: "Python not found"
+SOLUTION: Install Python from python.org, check "Add to PATH"
+
+PROBLEM: Setup fails
+SOLUTION: Run "python setup.py --repair"
+
+PROBLEM: Browser won't open
+SOLUTION: Go to http://localhost:8501 manually
+
+PROBLEM: Permission errors
+SOLUTION: Run Command Prompt as Administrator
+
+PROBLEM: Still not working?
+SOLUTION: Check REQUIREMENTS_AND_SETUP.txt for detailed help
+
+================================================================================
+
+📋 WHAT THE SETUP DOES:
+=======================
+
+The setup script automatically:
+✅ Creates isolated Python environment
+✅ Downloads and installs all required packages
+✅ Creates necessary folders and configuration files
+✅ Sets up launch scripts for easy startup
+✅ Configures the system for first use
+
+Total setup time: 5-15 minutes (depending on internet speed)
+
+================================================================================
+
+🎯 FIRST TIME USE:
+==================
+
+After launching:
+1. Explore the different tabs (Live Trading, Market Analysis, etc.)
+2. Go to "System Settings" to configure preferences
+3. Try the demo features before setting up live trading
+4. Read the full documentation in REQUIREMENTS_AND_SETUP.txt
+
+⚠️  IMPORTANT: Start with paper trading before using real money!
+
+================================================================================
+
+📞 NEED HELP?
+=============
+
+- Full Documentation: REQUIREMENTS_AND_SETUP.txt
+- Log Files: Check the logs/ folder
+- Reset Installation: python setup.py --repair
+- Manual Installation: Follow Method 3 above
+
+================================================================================

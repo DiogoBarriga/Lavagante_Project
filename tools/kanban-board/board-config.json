@@ -1,0 +1,44 @@
+{
+  "boardName": "Lavagante Project Kanban Board",
+  "columns": [
+    {
+      "name": "Backlog",
+      "limit": 50
+    },
+    {
+      "name": "In Progress",
+      "limit": 20
+    },
+    {
+      "name": "Review",
+      "limit": 10
+    },
+    {
+      "name": "Done",
+      "limit": 100
+    }
+  ],
+  "defaultAssignee": "unassigned",
+  "cardSettings": {
+    "showAssignee": true,
+    "showLabels": true,
+    "showDueDate": true
+  },
+  "automation": {
+    "enabled": true,
+    "rules": [
+      {
+        "trigger": "moveToInProgress",
+        "action": "assignToCurrentUser"
+      },
+      {
+        "trigger": "moveToReview",
+        "action": "notifyReviewers"
+      },
+      {
+        "trigger": "moveToDone",
+        "action": "archiveCard"
+      }
+    ]
+  }
+}

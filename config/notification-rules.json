@@ -1,0 +1,38 @@
+{
+  "notification_rules": [
+    {
+      "event": "issue_created",
+      "notification": {
+        "type": "email",
+        "recipients": ["team@example.com"],
+        "subject": "New Issue Created: {{issue.title}}",
+        "body": "A new issue has been created:\n\nTitle: {{issue.title}}\nDescription: {{issue.body}}\nLink: {{issue.url}}"
+      }
+    },
+    {
+      "event": "pull_request_merged",
+      "notification": {
+        "type": "slack",
+        "channel": "#development",
+        "message": "A pull request has been merged:\n\nTitle: {{pull_request.title}}\nAuthor: {{pull_request.user.login}}\nLink: {{pull_request.html_url}}"
+      }
+    },
+    {
+      "event": "sprint_completed",
+      "notification": {
+        "type": "email",
+        "recipients": ["stakeholders@example.com"],
+        "subject": "Sprint Completed: {{sprint.name}}",
+        "body": "The sprint has been completed:\n\nSprint: {{sprint.name}}\nDuration: {{sprint.start_date}} to {{sprint.end_date}}\nSummary: {{sprint.summary}}"
+      }
+    },
+    {
+      "event": "risk_identified",
+      "notification": {
+        "type": "sms",
+        "recipients": ["+1234567890"],
+        "message": "A new risk has been identified: {{risk.description}}. Please review the risk register."
+      }
+    }
+  ]
+}
